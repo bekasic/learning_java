@@ -3,16 +3,16 @@ package ru.bekasic.webtests.tests;
 import org.testng.annotations.Test;
 import ru.bekasic.webtests.model.GroupData;
 
-public class GroupCreationTests extends TestBase {
+public class GroupModificationTests extends TestBase{
 
     @Test
-    public void testGroupCreation(){
-        app.getNavigationHelper().goToGropPage();
-        app.getGroupHelper().initGroupCreation();
-        app.getGroupHelper().fillGroupForm(new GroupData("testGroup1", "description1", "description2"));
-        app.getGroupHelper().submitGroupCreation();
+    public void testGroupModification(){
         app.getNavigationHelper().goToGropPage();
         app.getGroupHelper().selectGroup();
+        app.getGroupHelper().initGroupModification();
+        app.getGroupHelper().fillGroupForm(new GroupData("testGroup1", "description1", "description2"));
+        app.getGroupHelper().submitGroupModification();
+        app.getNavigationHelper().goToGropPage();
     }
 
 }

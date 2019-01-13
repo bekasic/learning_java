@@ -1,6 +1,5 @@
 package ru.bekasic.webtests.appmanager;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -19,10 +18,10 @@ public class ApplicationManager {
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         driver.get("http://localhost/addressbook/");
-        sessionHelper.login("admin", "secret");
         groupHelper = new GroupHelper(driver);
         navigationHelper = new NavigationHelper(driver);
         sessionHelper = new SessionHelper(driver);
+        sessionHelper.login("admin", "secret");
     }
 
     public void stop() {
