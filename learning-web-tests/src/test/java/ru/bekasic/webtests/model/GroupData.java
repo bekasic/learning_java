@@ -1,4 +1,4 @@
-package ru.bekasic.webtests;
+package ru.bekasic.webtests.model;
 
 public class GroupData {
     private final String groupName;
